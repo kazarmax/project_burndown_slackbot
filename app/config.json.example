@@ -1,0 +1,10 @@
+{
+  "JIRA": {
+    "server": "...",
+    "user_name": "...",
+    "user_password": "..."
+  },
+  "SLACK": {
+    "token": "..."
+  }
+}

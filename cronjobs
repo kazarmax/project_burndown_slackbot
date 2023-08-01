@@ -1,0 +1,9 @@
+PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# At minute 0 past every 2nd hour from 6 through 20 on every day-of-week from Monday through Friday
+# Fills in redis cache with portfolio data
+0   6-20/2  *   *   1-5 root    PYTHONPATH=/opt/portfolio_burndown python /opt/portfolio_burndown/app/helpers/redis_utils.py
+# Scripts to send notifications about hh tasks and portfolios
+01 07 * * *   root	PYTHONPATH=/opt/portfolio_burndown python /opt/portfolio_burndown/app/views/daily_portf_stats_sender.py
+02 07 * * *   root	PYTHONPATH=/opt/portfolio_burndown python /opt/portfolio_burndown/app/views/daily_hh_stats_sender.py
+20 08 * * *   root	PYTHONPATH=/opt/portfolio_burndown python /opt/portfolio_burndown/app/views/portf_long_status_stats_sender.py
